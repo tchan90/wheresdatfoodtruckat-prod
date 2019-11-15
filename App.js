@@ -13,7 +13,7 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
 require('./routes')(app)
-
+//connect to dist folder
 app.use(express.static(__dirname + '/dist/'));
 app.get(/.*/, (req,res)=>res.sendFile(__dirname + '/dist/index.html'))
 
