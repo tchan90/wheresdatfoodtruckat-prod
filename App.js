@@ -17,7 +17,6 @@ require('./routes')(app)
 app.use(express.static(__dirname + '/dist/'));
 app.get(/.*/, (req,res)=>res.sendFile(__dirname + '/dist/index.html'))
 
-
 sequelize.sync().then(()=>{
     app.listen(process.env.PORT || 8081)
     console.log(`Server start on port ${config.port}`)
