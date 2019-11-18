@@ -14,8 +14,8 @@ app.use(bodyParser.json());
 app.use(cors());
 require('./routes')(app)
 //connect to dist folder
-app.use(express.static(__dirname + '/dist/'));
-app.get(/.*/, (req,res)=>res.sendFile(__dirname + '/dist/index.html'))
+app.use(express.static(__dirname + '/public/'));
+app.get(/.*/, (req,res)=>res.sendFile(__dirname + '/public/index.html'))
 
 sequelize.sync().then(()=>{
     app.listen(process.env.PORT || 8081)

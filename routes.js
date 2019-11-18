@@ -2,7 +2,7 @@ const AuthenticationRoutes = require('./controllers/Authentication');
 const AuthenticationPolicy = require('./policies/AuthenticationPolicy');
 const DirectoryController = require('./controllers/DirectoryController');
 const FavouritesController = require('./controllers/FavouriteController');
-const auth = require('./policies/middleware/auth')
+//const auth = require('./policies/middleware/auth')
 
 module.exports = (app) => {
     //Register and Login
@@ -12,7 +12,7 @@ module.exports = (app) => {
     //Directory
     //app.get('/directory', DirectoryController.getAllFoodTrucks)
     //AddTruck
-    app.post('/addTruck', auth, DirectoryController.postFoodTruck)
+    app.post('/addTruck', DirectoryController.postFoodTruck)
     //Get FoodTruck by ID
     app.get('/foodTruck/:foodTruckId', DirectoryController.getFoodTruckById)
     //Update Foodtruck by ID
